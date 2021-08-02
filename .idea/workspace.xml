@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1bc2c18-1c2b-4286-887d-449684fc04b3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/img/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Agg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Avocado.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Dark_chocolate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Legumes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Milk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Plank.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Push_Ups.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Salmon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Sit_Ups.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Squat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Whey_protein.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Whole_grain_bread.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Yoghurt_with_fat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/lunges.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/potato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/incremental/mergeReleaseResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/incremental/mergeReleaseResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-v26/abc_screen_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-v26/abc_screen_toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_title_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_title_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_menu_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_menu_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_mode_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_action_mode_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_title_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_alert_dialog_title_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_cascading_menu_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_cascading_menu_item_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_dialog_title_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_dialog_title_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_content_include.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_content_include.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_simple.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_simple.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_screen_toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_search_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_search_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_select_dialog_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/layout/abc_select_dialog_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build/intermediates/res/merged/release/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-native/scripts/.packager.env" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-native/scripts/.packager.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Exc.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Exc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Exercise.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Exercise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Food.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Food.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Goal.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Goal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Infomation.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Infomation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Profile.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1o6wunv8svQLdV3iUb9Ka3PbAD4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1bc2c18-1c2b-4286-887d-449684fc04b3" name="Default Changelist" comment="" />
+      <created>1612620573018</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612620573018</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="120" y="145" width="1200" height="554" key="AVDManager" timestamp="1612620979778">
+      <screen x="0" y="25" width="1440" height="797" />
+    </state>
+    <state x="120" y="145" width="1200" height="554" key="AVDManager/0.25.1440.797@0.25.1440.797" timestamp="1612620979778" />
+  </component>
+</project>

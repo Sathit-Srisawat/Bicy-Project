@@ -1,0 +1,6 @@
+module Pods_ProjectFinal_ProjectFinalTests {
+  umbrella header "Pods-ProjectFinal-ProjectFinalTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
