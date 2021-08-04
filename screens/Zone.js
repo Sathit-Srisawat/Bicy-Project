@@ -21,6 +21,8 @@ export default class Zone extends React.Component {
 
   render() {
 
+    const { id_user } = this.props.route.params
+
     return (
       <View style={{ flex: 1 }}>
         <ScrollView style = {{marginTop : 50}}>
@@ -29,7 +31,7 @@ export default class Zone extends React.Component {
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) =>
               <View >
-                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Maps' , {zone_id : item.id })}>
+                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Maps' , {zone_id : item.id , id_user : id_user})}>
                     <View style={{ position: 'absolute', top: '8%', alignSelf: 'center' }}>
                       <Text style={{ fontSize: 20, fontWeight: '500' }}>
                         BICY Zone {item.zone}

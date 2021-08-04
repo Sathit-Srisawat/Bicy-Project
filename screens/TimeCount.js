@@ -153,6 +153,7 @@ export default class TimeCount extends React.Component {
         const {id_bicy} = this.props.route.params
         const { zone_id } = this.props.route.params
         const { channelRent } = this.props.route.params
+        const { id_user } = this.props.route.params
 
         return (
             <View style={{ flex: 1 }}>
@@ -216,7 +217,7 @@ export default class TimeCount extends React.Component {
 
                                         <View style={{ bottom: 20, position: 'absolute', alignSelf: 'center' }}>
                                             <TouchableOpacity
-                                                onPress={() => this.props.navigation.navigate('ReturnStation' , {id_bicy : id_bicy ,zone_id : zone_id})}
+                                                onPress={() => this.props.navigation.navigate('ReturnStation' , {id_bicy : id_bicy ,zone_id : zone_id ,id_user:id_user})}
                                                 activeOpacity={0.6}
                                                 style={[styles.button, { backgroundColor : this.state.startDisable ? '#B0BEC5' : '#FF6F00', width: 250, height: 50 }]} 
                                                 disabled={this.state.startDisable}>

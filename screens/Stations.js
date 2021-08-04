@@ -22,6 +22,7 @@ export default class Stations extends React.Component {
   render() {
 
     const { zone_id } = this.props.route.params
+    const { id_user } = this.props.route.params
 
     return (
       <View style={{ flex: 1 }}>
@@ -45,7 +46,7 @@ export default class Stations extends React.Component {
             renderItem={({ item }) =>
               <View >
                 {item.zone_id == zone_id ?
-                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Bicy', { id: item.id ,zone_id : zone_id})}>
+                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Bicy', { id: item.id ,zone_id : zone_id , id_user:id_user})}>
                     <View style={{ position: 'absolute', top: '8%', alignSelf: 'center' }}>
                       <Text style={{ fontSize: 20, fontWeight: '500' }}>
                         BICY Station {item.id}  {item.station_name}

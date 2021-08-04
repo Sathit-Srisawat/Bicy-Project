@@ -28,6 +28,8 @@ export default class bicy extends React.Component {
 
     const { id } = this.props.route.params
     const { zone_id } = this.props.route.params
+    const { id_user } = this.props.route.params
+
     return (
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
 
@@ -61,7 +63,7 @@ export default class bicy extends React.Component {
                           <View>
                             {item.station == id ?
 
-                              <TouchableOpacity onPress={() => this.props.navigation.navigate('Bicycle', { type: item.type, id_bicy: item.id, zone_id: zone_id ,channelRent : item.channel })} style={styles.card}>
+                              <TouchableOpacity onPress={() => this.props.navigation.navigate('Bicycle', { type: item.type, id_bicy: item.id, zone_id: zone_id ,channelRent : item.channel ,station_id : id ,id_user : id_user})} style={styles.card}>
 
                                 <Text style={{ fontSize: 20, fontWeight: '500', alignSelf: 'center', margin: 10 }}>
                                   {item.type}
@@ -71,7 +73,7 @@ export default class bicy extends React.Component {
                                   {item.status == 0 ? <Text style={{ fontSize: 15, fontWeight: '400', alignSelf: 'center' }}>available Channel : {item.channel}</Text> : <Text style={{ fontSize: 15, fontWeight: '400', alignSelf: 'center' }}>not available</Text>}
                                 </View>
 
-                                <Image style={{ resizeMode: 'contain', alignSelf: 'center', width: 250, height: 150, borderRadius: 15, margin: 10 }} source={require('../img/CyclocrossBike.png')} />
+                                <Image style={{ resizeMode: 'contain', alignSelf: 'center', width: 300, height: 250, borderRadius: 15 }} source={{ url: item.url }} />
                               </TouchableOpacity>
 
 
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
   card: {
     marginLeft: 20,
     width: 350,
-    height: 240,
+    height: 260,
     backgroundColor: '#fff',
     borderRadius: 15,
     elevation: 10,

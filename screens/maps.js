@@ -6,7 +6,10 @@ import MapView, { Marker } from 'react-native-maps';
 export default class Profile extends React.Component {
 
     render() {
+
         const {zone_id} = this.props.route.params
+        const { id_user } = this.props.route.params
+
         return (
             <View style={{ flex: 1 }}>
                 <MapView
@@ -36,7 +39,7 @@ export default class Profile extends React.Component {
                 </MapView>
 
                 <View style={{ position: 'absolute', bottom: '8%', alignSelf: 'center' }}>
-                        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Station', {zone_id : zone_id})}>
+                        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Station', {zone_id : zone_id , id_user : id_user})}>
                             <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700' , alignSelf : 'center' }} >Find Stations</Text>
                         </TouchableOpacity>
                 </View>

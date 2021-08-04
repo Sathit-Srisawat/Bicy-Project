@@ -27,24 +27,37 @@ export default class Bicycle extends React.Component {
         this.fetchData();
     }
 
-
     render() {
 
         const { type } = this.props.route.params
         const { id_bicy } = this.props.route.params
         const { zone_id } = this.props.route.params
         const { channelRent } = this.props.route.params
+        const { station_id } = this.props.route.params
+        const { id_user } = this.props.route.params
+
         return (
             <View style={{ flex: 1, backgroundColor: '#fff' }}>
                 <View style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height / 3, borderRadius: 15 }}>
-                    <Image
-                        style={{ resizeMode: 'contain', width: Dimensions.get('window').width, height: Dimensions.get('window').height / 2.5 }}
-                        source={require('../img/bicy1.jpg')}
+
+                    <FlatList
+                        data={this.state.data}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item }) =>
+                            <View >
+                                {item.type == type ?
+                                    <Image
+                                        style={{ resizeMode: 'contain', width: Dimensions.get('window').width, height: Dimensions.get('window').height / 2.5 }}
+                                        source={{ url: item.url }}
+                                    />
+                                    : null}
+                            </View>
+                        }
                     />
 
                     <View style={{ position: 'absolute', top: 50, left: 20, right: 0, bottom: 20, flexDirection: 'row' }}>
                         <View style={{ marginTop: 2 }}>
-                            <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => this.props.navigation.navigate('Bicy1')}>
+                            <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => this.props.navigation.navigate('Bicy')}>
                                 <Icon name="angle-left" size={30} color="#6A6867" />
                             </TouchableOpacity>
                         </View>
@@ -52,7 +65,7 @@ export default class Bicycle extends React.Component {
                             <Button
                                 title='Back'
                                 color='#000'
-                                onPress={() => this.props.navigation.navigate('Bicy1')}
+                                onPress={() => this.props.navigation.navigate('Bicy')}
                             />
                         </View>
                     </View>
@@ -70,11 +83,11 @@ export default class Bicycle extends React.Component {
                                     <View style={{ flexDirection: 'row' }}>
                                         <View>
                                             <Text style={{ fontSize: 15, fontWeight: '600' }}>
-                                                Advised for {channelRent}
+                                                Advised for {channelRent} {console.log((zone_id * 10000) + (station_id * 100) + (channelRent))}
                                             </Text>
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Text style={{ color: '#EEA09A', fontSize: 15, fontWeight: '600', marginTop: 10 }}>
-                                                    175 - 185
+                                                    175 - 185 zone {zone_id}  station {station_id} channel {channelRent}
                                                 </Text>
                                                 <Text style={{ marginTop: 10, fontSize: 15, fontWeight: '600' }}> cm height</Text>
                                             </View>
@@ -111,7 +124,7 @@ export default class Bicycle extends React.Component {
                         style={{ alignSelf: 'center' }}
                         onPress={() => {
                             fetch('http://128.199.197.229/api/update_lock_channel', {
-                                method: 'PUT',
+                                method: 'POST',
                                 headers: {
                                     Accept: 'application/json',
                                     'Content-Type': 'application/json',
@@ -121,8 +134,22 @@ export default class Bicycle extends React.Component {
                                     status: 1,
                                 }),
                             });
+
+                            fetch('http://128.199.197.229/api/mqtt_request', {
+                                method: 'POST',
+                                headers: {
+                                    Accept: 'application/json',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    id_user: id_user,
+                                    command: (zone_id * 10000) + (station_id * 100) + (channelRent),
+                                }),
+                            });
+
+
                         }}
-                        onPressOut={() => this.props.navigation.navigate('TimeCount', { id_bicy: id_bicy, zone_id: zone_id, channelRent: channelRent })}>
+                        onPressOut={() => this.props.navigation.navigate('TimeCount', { id_bicy: id_bicy, zone_id: zone_id, channelRent: channelRent ,id_user:id_user})}>
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700' }} >Rent Bicycle</Text>
                     </TouchableOpacity>
                 </View>

@@ -26,6 +26,7 @@ export default class Channel extends React.Component {
     const { id_bicy } = this.props.route.params
     const { zone_id } = this.props.route.params
     const { id } = this.props.route.params //id station
+    const { id_user } = this.props.route.params
 
     return (
       <View style={{ flex: 1 }}>
@@ -51,7 +52,7 @@ export default class Channel extends React.Component {
                 {item.station == id ?
                   <View>
                     {item.status == 1 ?
-                      <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Return', { id_bicy: id_bicy, zone_id: zone_id, station_id: id, channel: item.id })}>
+                      <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Return', { id_bicy: id_bicy, zone_id: zone_id, station_id: id, channel: item.id ,id_user:id_user})}>
                         <View style={{ position: 'absolute', alignItems: 'center', justifyContent: 'center', top: 0, right: 0, left: 0, bottom: 0 }}>
                           <Text style={{ fontSize: 20, fontWeight: '700' }}>{item.id}</Text>
                         </View>

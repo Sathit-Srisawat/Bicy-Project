@@ -26,29 +26,67 @@ import Return from "./screens/Return";
 import Zone from "./screens/Zone";
 import Channel from "./screens/Channel";
 import Problem from "./screens/Problem";
+import Login from "./screens/login";
+import Registers from "./screens/register";
 
 
 export default function App() {
   const Drawer = createDrawerNavigator();
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="lock" component={Lock} />
-        <Drawer.Screen name="Profile" component={Profile} />
+      <Drawer.Navigator initialRouteName="Login">
+        <Drawer.Screen name="Login" component={Login} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Home" component={Home} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="lock" component={Lock} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Profile" component={Profile} options={{
+          gestureEnabled: false,
+        }}/>
         <Drawer.Screen name="Maps" component={Maps} />
-        <Drawer.Screen name="TimeCount" component={TimeCount} />
-        <Drawer.Screen name="Wallet" component={Wallet} />
-        <Drawer.Screen name="Topup" component={Topup} />
-        <Drawer.Screen name="Station" component={Station} />
-        <Drawer.Screen name="Bicy" component={Bicy} />
-        <Drawer.Screen name="Bicycle" component={Bicycle} />
-        <Drawer.Screen name="ReturnStation" component={ReturnStation} />
-        <Drawer.Screen name="Result" component={Result} />
-        <Drawer.Screen name="Return" component={Return} />
-        <Drawer.Screen name="Zone" component={Zone} />
-        <Drawer.Screen name="Channel" component={Channel} />
-        <Drawer.Screen name="Problem" component={Problem} />
+        <Drawer.Screen name="TimeCount" component={TimeCount} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Wallet" component={Wallet} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Topup" component={Topup} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Station" component={Station} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Bicy" component={Bicy} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Bicycle" component={Bicycle} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="ReturnStation" component={ReturnStation} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Result" component={Result} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Return" component={Return} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Zone" component={Zone} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Channel" component={Channel} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Problem" component={Problem} options={{
+          gestureEnabled: false,
+        }}/>
+        <Drawer.Screen name="Register" component={Registers} options={{
+          gestureEnabled: false,
+        }}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

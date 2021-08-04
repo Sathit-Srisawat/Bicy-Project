@@ -23,6 +23,7 @@ export default class ReturnStation extends React.Component {
 
     const {id_bicy} = this.props.route.params
     const { zone_id } = this.props.route.params
+    const { id_user } = this.props.route.params
 
     return (
       <View style={{ flex: 1 }}>
@@ -32,7 +33,7 @@ export default class ReturnStation extends React.Component {
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) =>
               <View >
-                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Channel' , {id : item.id , id_bicy : id_bicy , zone_id : zone_id})}>
+                  <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Channel' , {id : item.id , id_bicy : id_bicy , zone_id : zone_id,id_user:id_user})}>
                     <View style={{ position: 'absolute', top: '8%', alignSelf: 'center' }}>
                       <Text style={{ fontSize: 20, fontWeight: '500' }}>
                         BICY Station {item.id}  {item.station_name}

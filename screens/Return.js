@@ -15,7 +15,8 @@ export default class Return1 extends React.Component {
             station: 0,
             zone: 0,
             channel: 0,
-            startDisable: false
+            startDisable: false,
+            id_user : 0,
         }
     }
 
@@ -47,7 +48,7 @@ export default class Return1 extends React.Component {
             }),
         })
 
-        this.props.navigation.navigate('Result');
+        this.props.navigation.navigate('Result' , {id_user : this.state.id_user});
     };
 
 
@@ -58,6 +59,8 @@ export default class Return1 extends React.Component {
         const { id_bicy } = this.props.route.params
         const { zone_id } = this.props.route.params
         const { channel } = this.props.route.params
+        const { id_user } = this.props.route.params
+
         return (
             <View style={{ flex: 1, backgroundColor: '#fff' }}>
 
@@ -68,7 +71,7 @@ export default class Return1 extends React.Component {
 
                 <View style={{ position: 'absolute', top: "50%", width: Dimensions.get('window').width, height: Dimensions.get('window').height, backgroundColor: "#5E78D3", borderRadius: 15 }}>
                     <Text style={{ textAlign: 'center', margin: 50, fontSize: 30, color: '#fff', fontWeight: '700' }}>
-                        Once you lock this bike, it uses one key every time
+                        Once you lock this bike, it uses one key every time 
                     </Text>
                     <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff', fontWeight: '700' }}>
                         Station id : {station_id} , id Bicy : {id_bicy} , Zone id : {zone_id}, channel : {channel}
@@ -80,7 +83,7 @@ export default class Return1 extends React.Component {
                     <TouchableOpacity
                         style={[{ alignSelf: 'center', backgroundColor: this.state.startDisable ? '#B0BEC5' : '#111111', width: Dimensions.get('window').width - 110, height: 60, borderRadius: 15, }]}
                         disabled={this.state.startDisable}
-                        onPress={() => { this.setState({ id_bicy: id_bicy, station: station_id, zone: zone_id, channel: channel, startDisable: true }) }}>
+                        onPress={() => { this.setState({ id_bicy: id_bicy, station: station_id, zone: zone_id, channel: channel, startDisable: true,id_user : id_user }) }}>
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700', textAlign: 'center' }} >Confirm</Text>
                     </TouchableOpacity>
                 </View>

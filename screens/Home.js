@@ -21,6 +21,9 @@ export default class Home extends React.Component {
   }
 
   render() {
+
+    const { id_user } = this.props.route.params
+
     return (
       <View style={{ flex: 1 }}>
         <View>
@@ -45,7 +48,7 @@ export default class Home extends React.Component {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Zone')}>
+        <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Zone' , {id_user : id_user})}>
           <Text style={{ textAlign:'center',margin: 30, fontSize: 30, fontWeight: '600', color: '#49343d' }}>
             Station
           </Text>
