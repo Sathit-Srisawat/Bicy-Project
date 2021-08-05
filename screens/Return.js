@@ -20,6 +20,41 @@ export default class Return1 extends React.Component {
         }
     }
 
+    return = () => {
+        fetch('http://128.199.197.229/api/return', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: this.state.id_user,
+                idbike: this.state.id_bicy,
+                station: this.state.station,
+            }),
+        })
+        
+        this.props.navigation.navigate('Home');
+    };
+
+    updateStation = () =>{
+
+        fetch('http://128.199.197.229/api/update_station', { 
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: this.state.id_bicy,
+                station: this.state.station,
+                channel: this.state.channel,
+                zone_id: this.state.zone
+            }),
+        });
+
+    };
+
     Lock = () => {
 
         fetch('http://128.199.197.229/api/update_lock_channel', {
@@ -34,19 +69,8 @@ export default class Return1 extends React.Component {
             }),
         });
 
-        fetch('http://128.199.197.229/api/update_station', {
-            method: 'PUT',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: this.state.id_bicy,
-                station: this.state.station,
-                channel: this.state.channel,
-                zone_id: this.state.zone
-            }),
-        })
+        this.updateStation();
+        this.return();
 
         this.props.navigation.navigate('Result' , {id_user : this.state.id_user});
     };
@@ -72,9 +96,6 @@ export default class Return1 extends React.Component {
                 <View style={{ position: 'absolute', top: "50%", width: Dimensions.get('window').width, height: Dimensions.get('window').height, backgroundColor: "#5E78D3", borderRadius: 15 }}>
                     <Text style={{ textAlign: 'center', margin: 50, fontSize: 30, color: '#fff', fontWeight: '700' }}>
                         Once you lock this bike, it uses one key every time 
-                    </Text>
-                    <Text style={{ textAlign: 'center', fontSize: 15, color: '#fff', fontWeight: '700' }}>
-                        Station id : {station_id} , id Bicy : {id_bicy} , Zone id : {zone_id}, channel : {channel}
                     </Text>
                 </View>
 

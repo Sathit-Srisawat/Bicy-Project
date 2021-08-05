@@ -23,10 +23,13 @@ export default class Home extends React.Component {
   render() {
 
     const { id_user } = this.props.route.params
+    const { lastname } = this.props.route.params
+    const { phone } = this.props.route.params
+    const { profile } = this.props.route.params
 
     return (
       <View style={{ flex: 1 }}>
-        <View>
+        <View> 
           <Image
             style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
             source={require('../img/theme.png')}
@@ -41,9 +44,9 @@ export default class Home extends React.Component {
           </View>
 
           <View>
-            <TouchableOpacity style={{ left: 220 }} onPress={() => this.props.navigation.navigate('Profile')} >
-              <Image style={{ width: 50, height: 50, borderRadius: 15, marginTop: 15 }} source={require('../img/profile.jpg')} />
-              <Text style={{ marginTop: 10, marginRight: 4, alignSelf: 'center', fontSize: 15, fontWeight: '600', color: '#fff' }}> Profile </Text>
+            <TouchableOpacity style={{ left: 200 }}>
+              <Image style={{ width: 50, height: 50, borderRadius: 15, marginTop: 15 ,alignSelf : 'center'}} source={{ url: profile }} />
+              <Text style={{ marginTop: 10, alignSelf: 'center', fontSize: 15, fontWeight: '600', color: '#fff' }}> {lastname} </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -64,20 +67,22 @@ export default class Home extends React.Component {
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) =>
                 <View >
-                  <Text style={{ fontSize: 25, fontWeight: '600', color: '#49343d', alignSelf: 'center' }}>{item.balance} ฿</Text>
+                  {item.id == id_user? 
+                    <View><Text style={{ fontSize: 25, fontWeight: '600', color: '#49343d', alignSelf: 'center' }}>{item.balance} ฿</Text></View>
+                  : null}
                 </View>
               }
             />
         </View>
 
-        <TouchableOpacity style={styles.card2} onPress={() => this.props.navigation.navigate('Wallet')}>
+        <TouchableOpacity style={styles.card2} onPress={() => this.props.navigation.navigate('Wallet' ,{id_user : id_user ,lastname : lastname ,phone : phone})}>
           <Text style={{ textAlign:'center',margin: 30, fontSize: 30, fontWeight: '600', color: '#49343d' }}>
             Wallet
           </Text>
           <Image style={{ alignSelf:'center',width: 150, height: 150, borderRadius: 15, marginLeft: 10, marginRight: 10, marginBottom: 15 }} source={require('../img/wallet.png')} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card3} onPress={() => this.props.navigation.navigate('Topup')}>
+        <TouchableOpacity style={styles.card3} onPress={() => this.props.navigation.navigate('Topup', {id_user : id_user})}>
           <Text style={{ textAlign:'center',margin: 30, fontSize: 30, fontWeight: '600', color: '#49343d' }}>
             Top up
           </Text>

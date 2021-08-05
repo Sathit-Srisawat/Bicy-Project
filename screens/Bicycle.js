@@ -83,11 +83,11 @@ export default class Bicycle extends React.Component {
                                     <View style={{ flexDirection: 'row' }}>
                                         <View>
                                             <Text style={{ fontSize: 15, fontWeight: '600' }}>
-                                                Advised for {channelRent} {console.log((zone_id * 10000) + (station_id * 100) + (channelRent))}
+                                            Advised for
                                             </Text>
                                             <View style={{ flexDirection: 'row' }}>
                                                 <Text style={{ color: '#EEA09A', fontSize: 15, fontWeight: '600', marginTop: 10 }}>
-                                                    175 - 185 zone {zone_id}  station {station_id} channel {channelRent}
+                                                    {item.advised}
                                                 </Text>
                                                 <Text style={{ marginTop: 10, fontSize: 15, fontWeight: '600' }}> cm height</Text>
                                             </View>
@@ -96,17 +96,17 @@ export default class Bicycle extends React.Component {
                                             <Text style={{ fontSize: 15, fontWeight: '600' }}>
                                                 Bath / min
                                             </Text>
-                                            <Text style={{ color: '#EEA09A', fontSize: 15, fontWeight: '600', marginTop: 10, marginLeft: 25 }}> 3</Text>
+                                            <Text style={{ color: '#EEA09A', fontSize: 15, fontWeight: '600', marginTop: 10, marginLeft: 25 }}> {item.bath}</Text>
                                         </View>
                                     </View>
 
                                     <View>
                                         <View>
                                             <Text style={{ color: '#000', alignSelf: 'center', margin: 30, marginTop: 50, fontSize: 23, fontWeight: '600' }}>
-                                                Detail - Bicy 001 {channelRent}
+                                                Detail - {item.type}
                                             </Text>
                                             <Text style={{ margin: 20, fontSize: 16 }}>
-                                                Advised of 175 - 186 cm Supports the weight of 120 kg. Maximum speed of 500 km / h. Rent 3 baht per 5 min.
+                                                {item.detail}
                                             </Text>
                                         </View>
                                     </View>
@@ -124,7 +124,7 @@ export default class Bicycle extends React.Component {
                         style={{ alignSelf: 'center' }}
                         onPress={() => {
                             fetch('http://128.199.197.229/api/update_lock_channel', {
-                                method: 'POST',
+                                method: 'PUT',
                                 headers: {
                                     Accept: 'application/json',
                                     'Content-Type': 'application/json',
@@ -134,7 +134,9 @@ export default class Bicycle extends React.Component {
                                     status: 1,
                                 }),
                             });
+                        }}
 
+                        onPressIn={()=>{
                             fetch('http://128.199.197.229/api/mqtt_request', {
                                 method: 'POST',
                                 headers: {
@@ -146,8 +148,6 @@ export default class Bicycle extends React.Component {
                                     command: (zone_id * 10000) + (station_id * 100) + (channelRent),
                                 }),
                             });
-
-
                         }}
                         onPressOut={() => this.props.navigation.navigate('TimeCount', { id_bicy: id_bicy, zone_id: zone_id, channelRent: channelRent ,id_user:id_user})}>
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700' }} >Rent Bicycle</Text>

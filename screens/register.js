@@ -9,7 +9,23 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 
 export default class Register extends React.Component {
 
+    create_wallet = () => {
+        
+        fetch('http://128.199.197.229/api/create_wallet', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id : this.state.id,
+                balance: 0,
+            })
+        })
+    };
+
     register = () => {
+
         fetch('http://128.199.197.229/api/register', {
             method: 'POST',
             headers: {
@@ -24,7 +40,8 @@ export default class Register extends React.Component {
                 phonenumber : this.state.phonenumber,
                 idcard : this.state.idcard,
                 email: this.state.email,
-                password: this.state.password
+                password: this.state.password,
+                profile: this.state.profile,
             })
         })
             .then((response) => response.text())
@@ -34,6 +51,7 @@ export default class Register extends React.Component {
             .catch((error) => {
                 console.error(error);
             });
+        this.create_wallet();
 
         this.props.navigation.navigate('Login');
     };
@@ -97,6 +115,12 @@ export default class Register extends React.Component {
                         style={styles.input}
                         onChangeText={(password) => this.setState({ password })}
                         placeholder="   Password"
+                    />
+
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={(profile) => this.setState({ profile })}
+                        placeholder="   URL profile"
                     />
 
                 </View>

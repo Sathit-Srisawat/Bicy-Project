@@ -32,6 +32,8 @@ export default class Result extends React.Component {
 
 
     render() {
+
+        const { id_user } = this.props.route.params
         return (
             <View style={{ flex: 1 }}>
 
@@ -48,7 +50,9 @@ export default class Result extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={({ item }) =>
                                 <View style={{ marginTop: 10, alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 40 }}>{item.balance} ฿</Text>
+                                    {item.id == id_user ? 
+                                        <View><Text style={{ fontSize: 40 }}>{item.balance} ฿</Text></View>
+                                    :null}
                                 </View>
                             }
                         />
@@ -68,7 +72,7 @@ export default class Result extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={({ item }) =>
                                 <View style={{ marginBottom: 10 }}>
-                                    {item.id == 61113544 ?
+                                    {item.id == id_user ?
                                         <View>
                                             {item.receipt == 0 ? null : <Text style={{ textAlign: 'center' }}>Receipt {item.receipt}{'\n\n'}{item.created_at}</Text>}
                                             <View>
@@ -97,7 +101,7 @@ export default class Result extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={({ item }) =>
                                 <View style={{ marginBottom: 10 }}>
-                                    {item.id == 61113544 ?
+                                    {item.id == id_user ?
                                         <Text style={{ textAlign: 'center' }}>Return {item.idbike} || Station {item.station} {'\n\n'}{item.created_at}</Text>
                                         : null
                                     }

@@ -9,14 +9,12 @@ export default class Home extends React.Component {
     super(props);
 
     this.state = {
-      id: 61113544,
-      balance10: 10,
-      balance20: 20,
-      balance30: 30,
+      id: 0,
+      balance : 0,
     }
   }
 
-  history10 = () => {
+  history = () => {
     fetch('http://128.199.197.229/api/historyup', {
       method: 'POST',
       headers: {
@@ -25,42 +23,13 @@ export default class Home extends React.Component {
       },
       body: JSON.stringify({
         id: this.state.id,
-        receipt: this.state.balance10,
-      }),
-    })
-  };
-
-  history20 = () => {
-    fetch('http://128.199.197.229/api/historyup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        receipt: this.state.balance20,
-      }),
-    })
-  };
-
-  history30 = () => {
-    fetch('http://128.199.197.229/api/historyup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        receipt: this.state.balance30,
+        receipt: this.state.balance,
       }),
     })
   };
 
 
-
-  Topup10 = () => {
+  Topup = () => {
     fetch('http://128.199.197.229/api/topup', {
       method: 'PUT',
       headers: {
@@ -69,7 +38,7 @@ export default class Home extends React.Component {
       },
       body: JSON.stringify({
         id: this.state.id,
-        balance: this.state.balance10,
+        balance: this.state.balance,
       }),
     })
 
@@ -81,61 +50,21 @@ export default class Home extends React.Component {
         console.error(error);
       });
 
-    this.history10();
-  };
+    console.log(this.state.id);
+    console.log(this.state.balance);
 
-  Topup20 = () => {
-    fetch('http://128.199.197.229/api/topup', {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        balance: this.state.balance20,
-      }),
-    })
-
-      .then((response) => response.text())
-      .then((responseJson) => {
-        Alert.alert('Complete');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-      
-    this.history20();
-  };
-
-  Topup30 = () => {
-    fetch('http://128.199.197.229/api/topup', {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        balance: this.state.balance30,
-      }),
-    })
-
-      .then((response) => response.text())
-      .then((responseJson) => {
-        Alert.alert('Complete');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
-      this.history30();
+    this.history();
+    this.props.navigation.navigate('Home');
   };
 
 
   render() {
+    const { id_user } = this.props.route.params
+    //{this.setState({id : id_user})}
     return (
       <View style={{ flex: 1 }}>
+
+      
 
         <View style={{ marginTop: 30, alignSelf: 'flex-start' }}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={{ flexDirection: 'row' }}>
@@ -145,23 +74,23 @@ export default class Home extends React.Component {
         </View>
 
         <View style={{ marginTop: 8, alignItems: 'center' }}>
-          <Text style={{ fontSize: 25, fontWeight: '700' }}>Top up</Text>
+          <Text style={{ fontSize: 25, fontWeight: '700' }}>Top up </Text>
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <TouchableOpacity style={styles.card} onPress={this.Topup10} >
+          <TouchableOpacity style={styles.card} onPress={() => { this.setState({ id: id_user , balance : 10}) }} onPressOut={this.Topup}>
             <View style={{ position: 'absolute', alignItems: 'center', justifyContent: 'center', top: 0, right: 0, left: 0, bottom: 0 }}>
               <Text style={{ fontSize: 20, fontWeight: '700' }}>10฿</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={this.Topup20}>
+          <TouchableOpacity style={styles.card}onPress={() => { this.setState({ id: id_user , balance : 20}) }} onPressOut={this.Topup}>
             <View style={{ position: 'absolute', alignItems: 'center', justifyContent: 'center', top: 0, right: 0, left: 0, bottom: 0 }}>
               <Text style={{ fontSize: 20, fontWeight: '700' }}>20฿</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={this.Topup30}>
+          <TouchableOpacity style={styles.card} onPress={() => { this.setState({ id: id_user , balance : 30}) }} onPressOut={this.Topup}>
             <View style={{ position: 'absolute', alignItems: 'center', justifyContent: 'center', top: 0, right: 0, left: 0, bottom: 0 }}>
               <Text style={{ fontSize: 20, fontWeight: '700' }}>30฿</Text>
             </View>

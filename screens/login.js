@@ -77,7 +77,7 @@ export default class Login extends React.Component {
                             <View >
                                 {this.state.email == item.email && this.state.password == item.password ?
 
-                                        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Home' ,{id_user : item.id})}>
+                                        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Home' ,{id_user : item.id ,lastname : item.firstname , phone : item.phonenumber, profile : item.profile})}>
                                             <Text style={{ color: '#fff', fontSize: 20, fontWeight: '700', alignSelf: 'center',marginTop : 15 }} >Login</Text>
                                         </TouchableOpacity>
                                     : null}

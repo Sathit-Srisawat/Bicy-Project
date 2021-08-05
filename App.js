@@ -11,7 +11,6 @@ import 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Home from "./screens/Home";
-import Profile from "./screens/Profile";
 import Lock from "./screens/lock";
 import Maps from "./screens/maps";
 import TimeCount from "./screens/TimeCount";
@@ -37,56 +36,55 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Login">
         <Drawer.Screen name="Login" component={Login} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Home" component={Home} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="lock" component={Lock} options={{
           gestureEnabled: false,
-        }}/>
-        <Drawer.Screen name="Profile" component={Profile} options={{
+        }} />
+        <Drawer.Screen name="Maps" component={Maps} options={{
           gestureEnabled: false,
-        }}/>
-        <Drawer.Screen name="Maps" component={Maps} />
+        }} />
         <Drawer.Screen name="TimeCount" component={TimeCount} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Wallet" component={Wallet} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Topup" component={Topup} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Station" component={Station} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Bicy" component={Bicy} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Bicycle" component={Bicycle} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="ReturnStation" component={ReturnStation} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Result" component={Result} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Return" component={Return} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Zone" component={Zone} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Channel" component={Channel} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Problem" component={Problem} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
         <Drawer.Screen name="Register" component={Registers} options={{
           gestureEnabled: false,
-        }}/>
+        }} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -12,7 +12,9 @@ export default class Profile extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
+                
                 <MapView
+                
                     style={{ flex: 1 }}
                     initialRegion={{
                         latitude: 8.645297,
@@ -46,7 +48,7 @@ export default class Profile extends React.Component {
 
                 <View style={styles.card}>
                     <Text style={{ fontSize: 18, fontWeight: '300', color: '#424554', textAlign: 'center', marginTop: 20 }}>Walailak University</Text>
-                    <Text style={{ fontSize: 18, fontWeight: '300', color: '#424554', textAlign: 'center', marginTop: 10 }}>Bicy Station</Text>
+                    <Text style={{ fontSize: 18, fontWeight: '300', color: '#424554', textAlign: 'center', marginTop: 10 }}>Bicy Station </Text>
                 </View>
 
             </View>

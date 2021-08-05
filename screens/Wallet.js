@@ -27,6 +27,11 @@ export default class Home extends React.Component {
 
 
   render() {
+
+    const { id_user } = this.props.route.params
+    const { lastname } = this.props.route.params
+    const { phone } = this.props.route.params
+
     return (
       <View style={{ flex: 1 }}>
 
@@ -40,12 +45,12 @@ export default class Home extends React.Component {
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 25, fontWeight: '700' }}>
             Bicy Wallet
-              </Text>
+          </Text>
         </View>
 
         <View style={{ marginTop: 20, alignItems: 'center' }}>
           <Text style={{ fontSize: 16, fontWeight: '700' }}>
-            Hi Sathit 0801455967
+            Hi {lastname} {phone}
           </Text>
         </View>
 
@@ -53,7 +58,7 @@ export default class Home extends React.Component {
           <View style={{ margin: 20 }}>
             <Text style={{ fontSize: 20, fontWeight: '700' }}>
               Bicy Balance
-                    </Text>
+            </Text>
           </View>
 
           <View style={{ marginTop: 15, alignItems: 'center' }}>
@@ -62,7 +67,9 @@ export default class Home extends React.Component {
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) =>
                 <View style={{ marginTop: 10, alignItems: 'center' }}>
-                  <Text style={{ fontSize: 40 }}>{item.balance} ฿</Text>
+                  {item.id == id_user ?
+                    <View><Text style={{ fontSize: 40 }}>{item.balance} ฿</Text></View>
+                    : null}
                 </View>
               }
             />
@@ -81,13 +88,11 @@ export default class Home extends React.Component {
               data={this.state.history}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) =>
-                <View style={{marginBottom:10}}>
-                  {item.id == 61113544 ?
+                <View style={{ marginBottom: 10 }}>
+                  {item.id == id_user ?
                     <View>
-                      {item.receipt == 0 ? null : <Text style={{textAlign:'center'}}>Receipt {item.receipt}{'\n\n'}{item.created_at}</Text>}
-                    <View>
-                        {item.transfer == 0 ? null : <Text style={{textAlign:'center'}}>Transfer {item.transfer}{'\n\n'}{item.created_at}</Text>}
-                    </View>
+                      {item.receipt != 0 ? <View><Text style={{ textAlign: 'center' }}>Receipt {item.receipt}{'\n\n'}{item.created_at}</Text></View> : null}
+                      {item.transfer != 0 ? <View><Text style={{ textAlign: 'center' }}>Transfer {item.transfer}{'\n\n'}{item.created_at}</Text></View>: null}
                     </View>
 
                     : null

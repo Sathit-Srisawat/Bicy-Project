@@ -43,7 +43,7 @@ export default class TimeCount extends React.Component {
             money: '',
             moneyed: '',
             balance: '',
-            id: 61113544,
+            id:0,
             channelRent : 0,
         }
     }
@@ -186,7 +186,7 @@ export default class TimeCount extends React.Component {
                         <View style={{ alignItems: 'center' }}>
                             <View style={styles.card1}>
                                 <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30, fontWeight: '800' }}>
-                                    TIME {zone_id} ,{channelRent}
+                                    TIME 
                                 </Text>
 
                                 <View style={{ alignItems: 'center' }}>
@@ -208,7 +208,8 @@ export default class TimeCount extends React.Component {
 
                                         <View style={{ bottom: 80, position: 'absolute', alignSelf: 'center' }}>
                                             <TouchableOpacity
-                                                onPress={this.onButtonStop}
+                                                onPress={() => { this.setState({ id: id_user}) }}
+                                                onPressOut={this.onButtonStop}
                                                 activeOpacity={0.6}
                                                 style={[styles.button, { backgroundColor: this.state.startDisable ? '#FF6F00' : '#B0BEC5', width: 250, height: 50 }]}>
                                                 <Text style={styles.buttonText}>Stop</Text>

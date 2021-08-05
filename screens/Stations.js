@@ -32,9 +32,9 @@ export default class Stations extends React.Component {
         </View>
 
         <View style={{ top: '6%', alignSelf: 'flex-start' }}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={{ flexDirection: 'row' }}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Zone')} style={{ flexDirection: 'row' }}>
             <Icon name="angle-left" size={30} color="#000" style={{ margin: 10 }} />
-            <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', alignSelf: 'center' }} >Home</Text>
+            <Text style={{ color: '#000', fontSize: 20, fontWeight: '600', alignSelf: 'center' }} >Zone</Text>
           </TouchableOpacity>
         </View>
 
@@ -49,7 +49,7 @@ export default class Stations extends React.Component {
                   <TouchableOpacity style={styles.card} onPress={() => this.props.navigation.navigate('Bicy', { id: item.id ,zone_id : zone_id , id_user:id_user})}>
                     <View style={{ position: 'absolute', top: '8%', alignSelf: 'center' }}>
                       <Text style={{ fontSize: 20, fontWeight: '500' }}>
-                        BICY Station {item.id}  {item.station_name}
+                        BICY Station {item.id}  {item.station_name} 
                       </Text>
 
                       <Image style={{ alignSelf: 'center', width: 250, height: 150, borderRadius: 15, margin: 10 }} source={{ url: item.urls }} />
