@@ -145,7 +145,7 @@ export default class Bicycle extends React.Component {
                                 },
                                 body: JSON.stringify({
                                     id_user: id_user,
-                                    command: (zone_id * 10000) + (station_id * 100) + (channelRent),
+                                    command: (zone_id * 100000) + (station_id * 1000) + (channelRent * 10) + 1,
                                 }),
                             });
                         }}

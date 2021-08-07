@@ -16,7 +16,7 @@ export default class Return1 extends React.Component {
             zone: 0,
             channel: 0,
             startDisable: false,
-            id_user : 0,
+            id_user: 0,
         }
     }
 
@@ -33,13 +33,13 @@ export default class Return1 extends React.Component {
                 station: this.state.station,
             }),
         })
-        
+
         this.props.navigation.navigate('Home');
     };
 
-    updateStation = () =>{
+    updateStation = () => {
 
-        fetch('http://128.199.197.229/api/update_station', { 
+        fetch('http://128.199.197.229/api/update_station', {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',
@@ -72,7 +72,7 @@ export default class Return1 extends React.Component {
         this.updateStation();
         this.return();
 
-        this.props.navigation.navigate('Result' , {id_user : this.state.id_user});
+        this.props.navigation.navigate('Result', { id_user: this.state.id_user });
     };
 
 
@@ -95,7 +95,7 @@ export default class Return1 extends React.Component {
 
                 <View style={{ position: 'absolute', top: "50%", width: Dimensions.get('window').width, height: Dimensions.get('window').height, backgroundColor: "#5E78D3", borderRadius: 15 }}>
                     <Text style={{ textAlign: 'center', margin: 50, fontSize: 30, color: '#fff', fontWeight: '700' }}>
-                        Once you lock this bike, it uses one key every time 
+                        Once you lock this bike, it uses one key every time
                     </Text>
                 </View>
 
@@ -104,7 +104,21 @@ export default class Return1 extends React.Component {
                     <TouchableOpacity
                         style={[{ alignSelf: 'center', backgroundColor: this.state.startDisable ? '#B0BEC5' : '#111111', width: Dimensions.get('window').width - 110, height: 60, borderRadius: 15, }]}
                         disabled={this.state.startDisable}
-                        onPress={() => { this.setState({ id_bicy: id_bicy, station: station_id, zone: zone_id, channel: channel, startDisable: true,id_user : id_user }) }}>
+                        onPress={() => { this.setState({ id_bicy: id_bicy, station: station_id, zone: zone_id, channel: channel, startDisable: true, id_user: id_user }) }}
+                        onPressIn={()=>{
+                            fetch('http://128.199.197.229/api/mqtt_request', {
+                                method: 'POST',
+                                headers: {
+                                    Accept: 'application/json',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    id_user: id_user,
+                                    command: (zone_id * 100000) + (station_id * 1000) + (channel * 10) + 1,
+                                }),
+                            });
+                        }}
+                        >
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700', textAlign: 'center' }} >Confirm</Text>
                     </TouchableOpacity>
                 </View>
@@ -112,7 +126,22 @@ export default class Return1 extends React.Component {
                 <View style={{ bottom: '7%', position: 'absolute', alignSelf: 'center' }}>
                     <TouchableOpacity
                         style={[{ alignSelf: 'center', backgroundColor: this.state.startDisable ? '#111111' : '#B0BEC5', width: Dimensions.get('window').width - 110, height: 60, borderRadius: 15, }]}
-                        onPress={this.Lock}>
+                        onPress={this.Lock}
+                        onPressIn={() => {
+
+                            fetch('http://128.199.197.229/api/mqtt_request', {
+                                method: 'POST',
+                                headers: {
+                                    Accept: 'application/json',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    id_user: id_user,
+                                    command: (zone_id * 100000) + (station_id * 1000) + (channel * 10) + 2,
+                                }),
+                            });
+                        }}
+                        >
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700', textAlign: 'center' }} >Lock</Text>
                     </TouchableOpacity>
                 </View>
