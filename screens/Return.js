@@ -114,7 +114,7 @@ export default class Return1 extends React.Component {
                                 },
                                 body: JSON.stringify({
                                     id_user: id_user,
-                                    command: (zone_id * 100000) + (station_id * 1000) + (channel * 10) + 1,
+                                    command: (zone_id * 100000) + (station_id * 1000) + (channel * 10) + 3,
                                 }),
                             });
                         }}
