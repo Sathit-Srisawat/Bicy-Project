@@ -148,7 +148,25 @@ export default class Bicycle extends React.Component {
                                     command: (zone_id * 100000) + (station_id * 1000) + (channelRent * 10) + 1,
                                 }),
                             });
-                        }}
+
+                            () =>{
+
+                                fetch('http://128.199.197.229/api/history_rent', {
+                                    method: 'POST',
+                                    headers: {
+                                        Accept: 'application/json',
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                        user_id: id_user,
+                                        bike_id: id_bicy,
+                                    }),
+                                });
+    
+                            }
+                        }
+                        
+                        }
                         onPressOut={() => this.props.navigation.navigate('TimeCount', { id_bicy: id_bicy, zone_id: zone_id, channelRent: channelRent ,id_user:id_user})}>
                         <Text style={{ color: '#fff', fontSize: 20, marginTop: 15, fontWeight: '700' }} >Rent Bicycle</Text>
                     </TouchableOpacity>
